@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 
+import static com.oleksandr.todoapi.util.CustomDateFormatter.formatToDate;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -46,7 +47,7 @@ class CustomDateFormatterTest {
         String dateAsString = "01-12-2000";
         LocalDate expectedResult = LocalDate.of(2000,12,1);
 
-        LocalDate actualResult = CustomDateFormatter.formatToDate(dateAsString);
+        LocalDate actualResult = formatToDate(dateAsString);
 
         assertThat(actualResult).isEqualTo(expectedResult);
     }
@@ -55,6 +56,6 @@ class CustomDateFormatterTest {
     void shouldThrowExceptionIfDataInvalid(){
         String dateAsString = "01-12-2000 15:12";
 
-        assertThrows(DateTimeParseException.class, () -> CustomDateFormatter.formatToDate(dateAsString));
+        assertThrows(DateTimeParseException.class, () -> formatToDate(dateAsString));
     }
 }
