@@ -1,5 +1,9 @@
 package com.oleksandr.todoapi.service;
 
+import com.oleksandr.todoapi.dto.TaskDTO;
+
+import java.util.List;
+
 public interface TaskService {
 
     public void saveTask(TaskDTO dto);
