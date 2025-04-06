@@ -2,12 +2,12 @@ package com.oleksandr.todoapi.service;
 
 public interface TaskService {
 
-    public void saveTask(TaskRequestDTO dto);
+    public void saveTask(TaskDTO dto);
 
-    public TaskResponseDTO findByTitle(String title);
+    public TaskDTO findByTitle(String title);
 
-    public List<TaskResponseDTO> findTasksByDate(String date);
+    public List<TaskDTO> findTasksByDate(String date);
 
-    public List<TaskResponseDTO> findTodayTasks();
+    public List<TaskDTO> findTodayTasks();
 
 }
