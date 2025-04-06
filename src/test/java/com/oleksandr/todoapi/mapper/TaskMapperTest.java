@@ -28,7 +28,7 @@ public class TaskMapperTest {
         TaskDTO expectedResult = TaskDTO.builder()
                 .title("testTitle")
                 .description("testDescription")
-                .taskDate("2025-04-06")
+                .taskDate("06-04-2025")
                 .build();
 
         assertThat(actual).isEqualTo(expectedResult);
