@@ -24,3 +24,6 @@ To (Return Tasks by ActualDate) we need:
     receive a get mapping that FIND MY TODAY's TASKS
     find by now() date
     return LIST of DTO objects
+
+    is response and request dto is it the same?..
+    good question
