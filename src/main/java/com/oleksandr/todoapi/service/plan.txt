@@ -1,0 +1,26 @@
+API should:
+    Create Task using controller
+    Return Tasks by title
+    Return Tasks by date
+    Return Tasks by ActualDate
+
+To (Create Task using controller) we need:
+    receive some DTO object
+    map it to entity class
+    save to db
+
+To (Return Tasks by title) we need:
+    receive String title
+    find by title
+    return DTO object
+
+To (Return Tasks by date) we need:
+    receive date date
+    map it to our LocalDate format
+    find by date
+    return LIST of DTO objects
+
+To (Return Tasks by ActualDate) we need:
+    receive a get mapping that FIND MY TODAY's TASKS
+    find by now() date
+    return LIST of DTO objects
