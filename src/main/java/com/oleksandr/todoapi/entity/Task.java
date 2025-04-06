@@ -1,6 +1,8 @@
 package com.oleksandr.todoapi.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +13,8 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 @Table(name = "Tasks")
+@Builder
+@AllArgsConstructor
 public class Task implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
