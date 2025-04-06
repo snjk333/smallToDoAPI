@@ -16,12 +16,12 @@ public class TaskController {
     }
 
     @GetMapping
-    public TaskDTO getTaskByTitle(String title) {
+    public TaskDTO getTaskByTitle(@RequestParam String title) {
         return taskService.findByTitle(title);
     }
 
     @GetMapping("/date")
-    public List<TaskDTO> getTaskByDate(String date) {
+    public List<TaskDTO> getTaskByDate(@RequestParam String date) {
         return taskService.findTasksByDate(date);
     }
 
