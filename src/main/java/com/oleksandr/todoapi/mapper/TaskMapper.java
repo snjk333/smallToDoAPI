@@ -2,9 +2,15 @@ package com.oleksandr.todoapi.mapper;
 
 import com.oleksandr.todoapi.dto.TaskDTO;
 import com.oleksandr.todoapi.entity.Task;
+import com.oleksandr.todoapi.formatter.CustomDateFormatter;
 
 public class TaskMapper {
-    public TaskDTO mapToDTo(Task task) {
-        return null;
+    CustomDateFormatter formatter = new CustomDateFormatter();
+    public TaskDTO mapToDTO(Task task) {
+        return TaskDTO.builder()
+                .title(task.getTitle())
+                .description(task.getDescription())
+                .taskDate(formatter.format(task.getTaskDate()))
+                .build();
     }
 }

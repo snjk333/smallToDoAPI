@@ -23,7 +23,7 @@ public class TaskMapperTest {
                 .taskDate(LocalDate.of(2025,4,6))
                 .build();
 
-        TaskDTO actual = taskMapper.mapToDTo(task);
+        TaskDTO actual = taskMapper.mapToDTO(task);
 
         TaskDTO expectedResult = TaskDTO.builder()
                 .title("testTitle")
