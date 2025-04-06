@@ -14,16 +14,16 @@ import java.time.LocalDate;
 public class Task implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     private long id;
 
-    @Column(name = "title")
+    @Column(name = "title", nullable = false, unique = true)
     private String title;
 
     @Column(name = "description")
     private String description;
 
-    @Column(name = "taskDate")
+    @Column(name = "taskDate", nullable = false)
     private LocalDate taskDate;
 
 }
