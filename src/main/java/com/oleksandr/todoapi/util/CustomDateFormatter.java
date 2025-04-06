@@ -1,18 +1,16 @@
 package com.oleksandr.todoapi.util;
 
 import lombok.experimental.UtilityClass;
+import org.springframework.stereotype.Component;
 
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
-
-
-import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
-import java.util.Optional;
+
 
 @UtilityClass
+@Component
 public class CustomDateFormatter {
 
     private static final String PATTERN = "dd-MM-yyyy";

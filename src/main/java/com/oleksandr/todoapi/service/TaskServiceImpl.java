@@ -5,11 +5,13 @@ import com.oleksandr.todoapi.entity.Task;
 import com.oleksandr.todoapi.mapper.TaskMapper;
 import com.oleksandr.todoapi.repository.TaskRepository;
 import com.oleksandr.todoapi.util.CustomDateFormatter;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class TaskServiceImpl implements TaskService {
 
     TaskMapper taskMapper;

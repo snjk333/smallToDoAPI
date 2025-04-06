@@ -3,7 +3,9 @@ package com.oleksandr.todoapi.mapper;
 import com.oleksandr.todoapi.dto.TaskDTO;
 import com.oleksandr.todoapi.entity.Task;
 import com.oleksandr.todoapi.util.CustomDateFormatter;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TaskMapper {
     public TaskDTO mapToDTO(Task task) {
         return TaskDTO.builder()
