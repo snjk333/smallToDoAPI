@@ -12,4 +12,12 @@ public class TaskMapper {
                 .taskDate(CustomDateFormatter.formatToString(task.getTaskDate()))
                 .build();
     }
+
+    public Task mapToEntity(TaskDTO dto) {
+        return Task.builder()
+                .title(dto.title())
+                .description(dto.description())
+                .taskDate(CustomDateFormatter.formatToDate(dto.taskDate()))
+                .build();
+    }
 }
