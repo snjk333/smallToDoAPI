@@ -1,4 +1,4 @@
-package com.oleksandr.todoapi.contoller;
+package com.oleksandr.todoapi.controller;
 
 import com.oleksandr.todoapi.dto.TaskDTO;
 import com.oleksandr.todoapi.service.TaskService;
