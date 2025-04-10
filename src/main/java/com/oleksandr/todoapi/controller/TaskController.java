@@ -2,6 +2,7 @@ package com.oleksandr.todoapi.controller;
 
 import com.oleksandr.todoapi.dto.TaskDTO;
 import com.oleksandr.todoapi.service.TaskService;
+import com.oleksandr.todoapi.util.CustomDateFormatter;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,8 +28,12 @@ public class TaskController {
 
     @GetMapping("/date")
     public List<TaskDTO> getTaskByDate(@RequestParam String date) {
+        if (!CustomDateFormatter.isValid(date)) {
+            return List.of();
+        }
         return taskService.findTasksByDate(date);
     }
+
 
     @GetMapping("/today")
     public List<TaskDTO> getTaskByToday() {
