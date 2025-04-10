@@ -16,6 +16,11 @@ public class TaskController {
     }
 
     @GetMapping
+    public List<TaskDTO> getAllTasks() {
+        return taskService.getAllTasks();
+    }
+
+    @GetMapping("/title")
     public TaskDTO getTaskByTitle(@RequestParam String title) {
         return taskService.findByTitle(title);
     }

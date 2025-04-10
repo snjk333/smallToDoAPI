@@ -17,6 +17,12 @@ public class TaskServiceImpl implements TaskService {
     TaskMapper taskMapper;
     TaskRepository taskRepository;
 
+    @Override
+    public List<TaskDTO> getAllTasks() {
+        return taskRepository.findAll().stream()
+                .map(task -> taskMapper.mapToDTO(task)).toList();
+    }
+
     public TaskServiceImpl(TaskMapper taskMapper, TaskRepository taskRepository) {
         this.taskMapper = taskMapper;
         this.taskRepository = taskRepository;

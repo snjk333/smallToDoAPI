@@ -6,6 +6,9 @@ import java.util.List;
 
 public interface TaskService {
 
+
+    public List<TaskDTO> getAllTasks();
+
     public void saveTask(TaskDTO dto);
 
     public TaskDTO findByTitle(String title);
