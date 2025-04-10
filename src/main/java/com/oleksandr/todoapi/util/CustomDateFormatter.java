@@ -10,7 +10,6 @@ import java.time.format.DateTimeParseException;
 
 
 @UtilityClass
-@Component
 public class CustomDateFormatter {
 
     private static final String PATTERN = "dd-MM-yyyy";
