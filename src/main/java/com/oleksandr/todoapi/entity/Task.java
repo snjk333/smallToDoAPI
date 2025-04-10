@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Entity
 @Data
 @NoArgsConstructor
-@Table(name = "Tasks")
+@Table(name = "tasks")
 @Builder
 @AllArgsConstructor
 public class Task implements Serializable {
@@ -27,7 +27,7 @@ public class Task implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "taskDate", nullable = false)
+    @Column(name = "taskdate", nullable = false)
     private LocalDate taskDate;
 
 }
