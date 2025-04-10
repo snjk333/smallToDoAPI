@@ -17,9 +17,9 @@ public class TaskMapper {
 
     public Task mapToEntity(TaskDTO dto) {
         return Task.builder()
-                .title(dto.title())
-                .description(dto.description())
-                .taskDate(CustomDateFormatter.formatToDate(dto.taskDate()))
+                .title(dto.getTitle())
+                .description(dto.getDescription())
+                .taskDate(CustomDateFormatter.formatToDate(dto.getTaskDate()))
                 .build();
     }
 }
