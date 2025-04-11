@@ -10,6 +10,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.time.LocalDate;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -76,5 +79,31 @@ class TaskControllerTest {
         var response = taskController.getTaskByDate(date);
         assertThat(response).isEqualTo(List.of());
     }
+
+    @Test
+    void getTodayTasksReturnsDTO() {
+        var task = List.of(TaskDTO.builder()
+                .title("testTitle")
+                .taskDate("11.04.2025")
+                .build());
+        Mockito.doReturn(task).when(taskService).findTodayTasks();
+
+        var actualResult = taskController.getTaskByToday();
+        assertNotNull(actualResult);
+        assertThat(actualResult).isEqualTo(task);
+    }
+
+    @Test
+    void saveTaskCallsServiceWithCorrectDTO() {
+        TaskDTO taskDTO = TaskDTO.builder()
+                .title("testTitle")
+                .taskDate("11-04-2025")
+                .build();
+
+        taskController.saveTask(taskDTO);
+
+        Mockito.verify(taskService).saveTask(taskDTO);
+    }
+
 
 }
