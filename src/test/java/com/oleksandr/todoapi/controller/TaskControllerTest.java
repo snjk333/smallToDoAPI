@@ -84,7 +84,7 @@ class TaskControllerTest {
     void getTodayTasksReturnsDTO() {
         var task = List.of(TaskDTO.builder()
                 .title("testTitle")
-                .taskDate("11.04.2025")
+                .taskDate("11-04-2025")
                 .build());
         Mockito.doReturn(task).when(taskService).findTodayTasks();
 
