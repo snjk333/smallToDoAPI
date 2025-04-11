@@ -42,6 +42,9 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public List<TaskDTO> findTasksByDate(String date) {
+        if (!CustomDateFormatter.isValid(date)) {
+            throw new IllegalArgumentException("Invalid date format");
+        }
         List<Task> taskList = taskRepository.findByTaskDate(CustomDateFormatter.formatToDate(date));
         return taskList.stream().map(taskMapper::mapToDTO).collect(Collectors.toList());
     }

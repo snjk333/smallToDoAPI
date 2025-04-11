@@ -28,10 +28,11 @@ public class TaskController {
 
     @GetMapping("/date")
     public List<TaskDTO> getTaskByDate(@RequestParam String date) {
-        if (!CustomDateFormatter.isValid(date)) {
+        try {
+            return taskService.findTasksByDate(date);
+        } catch (IllegalArgumentException e) {
             return List.of();
         }
-        return taskService.findTasksByDate(date);
     }
 
 
