@@ -2,10 +2,8 @@ package com.oleksandr.todoapi.mapper;
 
 import com.oleksandr.todoapi.dto.TaskDTO;
 import com.oleksandr.todoapi.entity.Task;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import javax.swing.text.DateFormatter;
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.*;

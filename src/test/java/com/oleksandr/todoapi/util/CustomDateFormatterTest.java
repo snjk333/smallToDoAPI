@@ -1,7 +1,5 @@
 package com.oleksandr.todoapi.util;
 
-import lombok.experimental.UtilityClass;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

@@ -1,7 +1,6 @@
 package com.oleksandr.todoapi.util;
 
 import lombok.experimental.UtilityClass;
-import org.springframework.stereotype.Component;
 
 
 import java.time.LocalDate;
